@@ -1,0 +1,31 @@
+Gizlilik Politikası ve KVKK Aydınlatma Metni
+Sürüm 2026-10-09 · Taslak. Yayıncı/veri sorumlusu kimliği, canlı sağlayıcı ayarları, yurt dışı aktarım, saklama/silme süreleri ve mağaza beyanları doğrulanıp hukuk danışmanı tarafından incelenmeden yayımlanamaz.
+
+1. Veri sorumlusu ve iletişim
+Business Audit hizmetinin sağlayıcısı ve veri sorumlusu: Serkan Aktaş,. Bireysel yayıncı için MERSİS numarası uygulanmaz. İletişim: serqanaktas@gmail.com. Adres ve e-posta alanı, bu sayfa yayımlanmadan önce gerçek ve erişilebilir iletişim bilgileriyle tamamlanmalıdır.
+
+2. Cihazınızda saklanan finansal kayıtlar
+Elle eklediğiniz veya desteklenen CSV/XLSX dosyasından onayladığınız gelir-gider kayıtları, açıklama/kategori/tarih/tutar/ödeme durumu, içe aktarma sırasında gerekli kaynak satırı ve kayıt değişiklik geçmişi bu sürümde cihazınızdaki yerel veritabanında saklanır. Güncel gelir-gider ekranlarında hesaplamalar cihazda yapılır; bu finansal kayıtlar Business Audit sunucusuna eşitlenmez. İçe aktarılan kaynak dosyanın kendisi kalıcı dosya olarak saklanmaz; içe aktarma kaynağından alınan alanlar yerel kayıtta bulunabilir.
+
+Yerel veritabanına uygulama düzeyinde şifreleme şu anda uygulanmış değildir. Android uygulamasında platform yedeği ve cihaz aktarımı yapılandırmada kapalıdır. iOS'ta yerel veritabanı Application Support dizinindedir; Apple sistem yedekleri bu dizindeki dosyaları kapsayabilir. Bu davranış Business Audit sunucu yedeği değildir ve cihaz/işletim sistemi ayarlarına bağlıdır. Uygulamanın kendi cihazlar arası yedek/geri yükleme hizmeti bu sürümde yoktur.
+
+3. Hesap ve isteğe bağlı servisler
+Hesap: e-posta/şifre ya da seçtiğiniz Google/Apple sağlayıcısı üzerinden oturum bilgileri Supabase Auth tarafından işlenir. Hesap kimliği workspace sahipliğini doğrulamak için kullanılır. Profil tablosunda dil, yasal metin sürümü/kabul zamanı ve AI aktarım tercihi gibi alanlar tutulabilir.
+AI: Güncel gelir-gider ekranları AI sağlayıcısına kayıt veya dosya göndermez. Depoda kalan eski abonelik teşhis endpoint'i, yeni dağıtımda açıkça etkinleştirilmedikçe kapalıdır. Üretim Supabase projesinde de kapalı olduğu doğrulanmadan bu taslak yayımlanmamalıdır. Gelecekteki bir AI özelliğinde gönderilecek alanlar ve sağlayıcı, özellik kullanılmadan önce ayrıca açıklanmalıdır.
+Hata tanılama: Sentry yalnız uygulama yapılandırmasında DSN verilirse başlatılır. Kod; kullanıcı metni, finansal tutar, ekran görüntüsü ve serbest breadcrumb/context içeriğini göndermemek üzere hata olayını ayıklar. Üretim DSN ayarı ve gerçek olay örneği yayın öncesinde doğrulanmalıdır.
+Abonelik ve satın alma: Pro teklifleri uygulamada RevenueCat SDK'sı üzerinden Apple App Store veya Google Play satın alma altyapısına sunulur. RevenueCat; anonim ya da oturum açılmış uygulama kullanıcı kimliğini, ürün/abonelik durumunu ve işlemi doğrulama ile Pro erişimini yönetmek için gerekli satın alma/işlem verilerini alabilir. Ödeme kartı ve mağaza hesabı bilgileri Business Audit tarafından alınmaz; ilgili mağaza tarafından işlenir. RevenueCat ayrı bir hizmet sağlayıcısıdır. Test Store işlemleri gerçek mağaza ödemesi değildir.
+4. Alıcılar ve uluslararası aktarım
+Hesap/oturum için Supabase ve seçtiğiniz giriş sağlayıcısı; satın alma/abonelik doğrulaması için RevenueCat ile Apple App Store veya Google Play; DSN etkinse hata tanılama sağlayıcısı teknik veri işleyebilir. Üretim Supabase bölgesi, RevenueCat proje/veri ayarları, alt işleyenler, yedek konumu ve işleme ülkeleri kaynak kodundan kesinleştirilemez. Kesin alıcılar, aktarım ülkeleri ve uygulanacak hukuki mekanizma canlı sağlayıcı ayarlarıyla ve hukuk incelemesiyle teyit edilmelidir.
+
+5. Amaç, hukuki sebep ve saklama
+Hesap verileri oturum ve hesap güvenliği; cihazdaki finansal kayıtlar kullanıcının istediği kayıt ve dönem incelemesi; tanılama verileri etkinse hata giderme amacıyla kullanılabilir. Her veri kategorisi için hukuki sebep, saklama süresi ve silme istisnası veri sorumlusu ve hukuk danışmanıyla kesinleştirilmelidir. Bu taslak hukuki görüş değildir.
+
+6. Hesap ve verileri silme
+Hesap silmeyi Ayarlar → Hesabı sil adımından başlatabilir veya hesap silme sayfasındaki e-posta yöntemini kullanabilirsiniz. Uygulama mevcut cihazdaki Business Audit verisini temizleyip sunucu hesabı için silme isteği gönderir. Çevrimdışı başka cihazlardaki kopyalar, dışa aktarılan dosyalar ve işletim sistemi/üçüncü taraf yedekleri uzaktan silinemez; bunları ayrıca kaldırmanız gerekir. Sunucu yedeklerinde uygulanacak silme süresi hukuk ve üretim yapılandırmasıyla doğrulanmalıdır.
+
+7. Haklarınız
+KVKK ve uygulanabilir mevzuat kapsamındaki başvurular için privacy@businessaudit.app adresini kullanabilirsiniz. Başvuruda kimlik doğrulama yöntemi, yanıt süresi ve veri sorumlusu iletişim bilgileri yayın öncesinde teyit edilmelidir.
+
+8. Çocuklar ve değişiklikler
+Hizmet işletme finansal kayıtlarının takibi için tasarlanmıştır. Yaş uygunluğu, güncelleme bildirimi ve saklama koşulları yayın öncesi hukuk incelemesiyle kesinleştirilmelidir.
+
