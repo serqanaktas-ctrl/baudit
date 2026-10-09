@@ -1,0 +1,31 @@
+Privacy Policy
+Version 2026-10-09 · Draft. Do not publish until the publisher/data-controller identity, live provider settings, international transfers, retention/deletion periods, and store disclosures have been verified and reviewed by counsel.
+
+1. Controller and contact
+Business Audit is provided by, and the data controller is, Serkan Aktaş Contact: serqanaktas@gmail.com. Complete the address and email fields with real, reachable contact details before publication.
+
+2. Financial records stored on your device
+Income and expense entries that you add manually or approve from a supported CSV/XLSX import, including descriptions, categories, dates, amounts, payment status, required source-row details, and edit history, are stored in the local database on your device in this version. The current financial-record screens calculate on-device and do not sync these records to Business Audit servers. The imported source file itself is not retained as a permanent file; fields taken from it may remain in your local records.
+
+The local database does not currently use app-level encryption. Android platform backup and device transfer are disabled in the app configuration. On iOS, the database is stored in Application Support, which Apple system backups may include. This is not a Business Audit server backup and depends on the device and operating-system settings. The app does not provide its own cross-device backup/restore service in this version.
+
+3. Account and optional services
+Account: sign-in details are processed through Supabase Auth using email/password or the Google/Apple provider you choose. The account identifier is used to verify workspace ownership. The profile table may store locale, accepted legal-text version/time, and AI-transfer preference.
+AI: the current financial-record screens do not send records or files to an AI provider. A legacy subscription-diagnosis endpoint remains in the repository and is disabled by default in a new deployment unless explicitly enabled. This draft must not be published until the production Supabase project is confirmed to have it disabled. Any future AI feature must explain the fields and provider before use.
+Error diagnostics: Sentry starts only when a DSN is supplied in app configuration. The code scrubs event content to avoid sending user text, financial amounts, screenshots, or arbitrary breadcrumbs/context. Verify the production DSN setting and a real event sample before release.
+Subscriptions and purchases: Pro offers are presented in the app through the RevenueCat SDK and the Apple App Store or Google Play billing systems. RevenueCat may receive an anonymous or signed-in App User ID, product/subscription status, and purchase/transaction information needed to validate transactions and manage Pro access. Business Audit does not receive payment-card or store-account credentials; the relevant store processes those. RevenueCat is a separate service provider. Test Store transactions are not real store payments.
+4. Recipients and international transfers
+Supabase and your chosen sign-in provider may process account data; RevenueCat and Apple App Store or Google Play may process purchase/subscription data; and a diagnostics provider may process technical data if its DSN is enabled. The production Supabase region, RevenueCat project/data settings, subprocessors, backup locations, and processing countries cannot be established from this source repository. Confirm the live provider configuration, recipients, transfer countries, and applicable transfer mechanism before completing this section.
+
+5. Purposes, legal bases, and retention
+Account data may be used for sign-in and account security; on-device financial records for the records and period reviews you request; and diagnostic data, if enabled, to resolve errors. The controller and its counsel must confirm the legal basis, retention period, and deletion exceptions for each data category. This draft is not legal advice.
+
+6. Account and data deletion
+Start deletion in Settings → Delete account or use the email method on the account deletion page. The app clears Business Audit data on the current device and sends a request to delete the server account. It cannot remotely erase copies on another offline device, exported files, or operating-system/third-party backups; remove those separately. Confirm the deletion period for server backups through legal review and production configuration.
+
+7. Your rights
+For requests under applicable privacy law, contact privacy@businessaudit.app. The request-verification method, response timeline, and controller contact details must be confirmed before publication.
+
+8. Children and changes
+The service is designed for tracking business financial records. Age eligibility, change notices, and retention terms must be finalized after legal review.
+
